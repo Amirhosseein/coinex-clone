@@ -1,0 +1,66 @@
+{
+    "dataSchema": [
+        [
+            "BTC",
+            "XRP"
+        ],
+        [
+            "CET",
+            "AVAX"
+        ],
+        [
+            "ETH",
+            "ADA"
+        ],
+        [
+            "SOL",
+            "BNB"
+        ],
+        [
+            "LINK",
+            "ARB"
+        ]
+    ],
+    "dataIndex": {
+        "BTC": {
+            "outerIndex": 0,
+            "innerIndex": 0
+        },
+        "XRP": {
+            "outerIndex": 0,
+            "innerIndex": 1
+        },
+        "CET":{
+            "outerIndex": 1,
+            "innerIndex": 0
+        },
+        "AVAX":{
+            "outerIndex": 1,
+            "innerIndex": 1
+        },
+        "ETH":{
+            "outerIndex": 2,
+            "innerIndex": 0 
+        },
+        "ADA":{
+            "outerIndex": 2,
+            "innerIndex": 1 
+        },
+        "SOL":{
+            "outerIndex": 3,
+            "innerIndex": 0   
+        },
+        "BNB":{
+            "outerIndex": 3,
+            "innerIndex": 1   
+        },
+        "LINK":{
+            "outerIndex": 4,
+            "innerIndex": 0   
+        },
+        "ARB":{
+            "outerIndex": 4,
+            "innerIndex": 1   
+        }
+    }
+}

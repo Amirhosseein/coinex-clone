@@ -1,0 +1,38 @@
+{
+    "data": [
+        [
+            {
+                "imgSrc": "./basic1.png",
+                "imgAlt": "Deposit",
+                "context": "How to Deposit/Withdraw on CoinEx?"
+            },
+            {
+                "imgSrc": "./basic2.png",
+                "imgAlt": " Spot Trading",
+                "context": "CoinEx Spot Trading Guide"
+            },
+            {
+                "imgSrc": "./basic3.png",
+                "imgAlt": "Earn ",
+                "context": "Earn with CoinEx Financial Account"
+            }
+        ],
+        [
+            {
+                "imgSrc": "./advance1.png",
+                "imgAlt": "Futures",
+                "context": "CoinEx Futures (Perpetual Contract) Guide"
+            },
+            {
+                "imgSrc": "./advance2.png",
+                "imgAlt": "Margin",
+                "context": "CoinEx Margin Trading Guide"
+            },
+            {
+                "imgSrc": "./advance3.png",
+                "imgAlt": "AMM",
+                "context": "Earn with CoinEx AMM (Automated Market Making)"
+            }
+        ]
+    ]
+}

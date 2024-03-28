@@ -1,0 +1,23 @@
+.blog--container{
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 70px;
+   
+}
+
+.blog--card--container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 20px;
+}
+
+
+
+@media screen and (max-width:900px) {
+    .blog--card--container{
+        justify-content: center;
+        flex-direction: column;
+    }
+}

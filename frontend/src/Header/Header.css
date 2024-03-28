@@ -1,0 +1,148 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top:0;
+    padding: 0px 5px 0px 5px;
+    z-index: 10;
+}
+
+.header ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    margin-top: 0px;
+    /* padding-top: 10px; */
+    padding-left: 4px;
+    margin-bottom: 0px;
+    align-items: center;
+}
+
+.header--links--group{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    margin-top: 0px;
+    /* padding-top: 10px; */
+    padding-left: 4px;
+    margin-bottom: 0px;
+    align-items: center;
+}
+
+.header--right{
+    padding-right: 12px;
+    padding-top: 0px !important;
+    margin-top: 0px;
+   
+}
+
+.header--right--container--max{
+    display: flex;
+    flex-direction: row-reverse !important;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header--right--container--middle{
+    /* display: flex;
+    flex-direction: row; */
+    display: none;
+}
+
+.lines--container{
+    display: flex;
+    flex-direction:column;
+    cursor: pointer;
+}
+
+.lines--container span{
+    width: 15px;
+    height: 4px;
+    background-color: #7d7f81;
+    margin: 2px 5px;
+    cursor: pointer;
+}
+
+.lines--container--active span{
+    background-color: #0ead98;
+}
+
+
+
+.header li{
+    margin: 0px 8px 0px;
+    cursor: pointer;
+}
+
+.header li:hover{
+    color: #0ead98;
+}
+
+.header--image{
+    /* background-color: blueviolet; */
+    margin-left:2px !important;
+    margin-top: 0px !important;
+}
+
+.header--worldLogo,.header--moon,.header--download{
+    width: 17px;
+    height: 17px;
+}
+
+
+.sing-up{
+    background: #0ead98;
+    border: 1px solid #0ead98;
+}
+
+.sing-up:hover{
+    background: rgb(59, 191, 173) ;
+    border: 1px solid #0ead98;
+}
+
+.log-in{
+    background: transparent;
+    color: #161719; 
+    border:none;
+    padding-top: 0px;
+}
+
+.log-in:hover{
+    color: #0ead98;
+    background: transparent;
+    border:none;
+}
+
+.header--image img{
+    height: 35px;
+    padding-top: 0px !important;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    
+    .header--right--container--max{
+        display: none;
+    }
+
+    .header--right--container--middle{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 940px) {
+    
+    .header--links--group{
+        display: none;
+    }
+
+}

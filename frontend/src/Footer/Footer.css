@@ -1,0 +1,66 @@
+.footer--main--container{
+    padding: 20px 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f5f9fa;
+}
+
+.footer--divs{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer--divs a{
+    text-decoration: none;
+    color: #7d7f81;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   
+}
+
+.footer--divs a:hover{
+    color: #0d9389;
+}
+
+.footer--divs--group{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.footer--divs--group a{
+    width: 200px;
+}
+
+.footer--green--banner{
+    padding: 5px 8%;
+    background-color: #0ead98;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.footer--socalMedia--container a{
+    margin-right: 5px;
+}
+
+
+
+@media screen and (max-width:1220px) {
+    
+    /* temporary rule */
+
+
+    .footer--support{
+        display: none;
+    }
+
+    .footer--services{
+        display: none;
+    }
+}

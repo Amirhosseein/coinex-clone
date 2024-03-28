@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "imgSrc":"./cover-1.png",
+            "header":"CoinEx Daily: Forta (FORT) Surges 47%, LooksRare will distribute YOLO tokens to LOOKS stakers",
+            "text":"CoinEx Top Gainer- Forta (FORT), CoinEx News Nosh- LooksRare will distribute YOLO tokens to LOOKS stakers"
+        },
+        {
+            "imgSrc":"./cover-2.png",
+            "header":"CoinEx Daily: Badmad Robots (METAL) Surges 60%, Uniswap v4 is scheduled to launch in Q3 2024",
+            "text":"CoinEx Top Gainer- Badmad Robots (METAL), CoinEx News Nosh- Uniswap v4 is scheduled to launch in Q3 2024"
+        },
+        {
+            "imgSrc":"./cover-3.png",
+            "header":"Unveiling Bitcoin Halving: What Other Cryptocurrencies Have a Halving Besides Bitcoin?",
+            "text":"Discover the world of cryptocurrency halving beyond Bitcoin. Learn about Litecoin, Nervos Network, and Dash - how halving events impact scarcity and value."
+        }
+    ]
+}

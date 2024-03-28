@@ -1,0 +1,20 @@
+.registerBtn {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  margin-left: 5px;
+  font-family: "Roboto", sans-serif;
+  width: 140px;
+  height: 45px;
+  border: none;
+  color: #fff;
+  background-color: #0ead98;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.registerBtn:hover{
+    background-color: rgb(59, 191, 173);
+    box-shadow: 0 10px 20px rgba(7, 125, 117, 0.23);
+    
+}

@@ -1,0 +1,9 @@
+.language--box {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  background-color: rgb(14,173,152);
+  z-index: 1;
+}

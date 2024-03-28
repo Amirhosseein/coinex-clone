@@ -1,0 +1,23 @@
+.listComp--container{
+    position: relative;
+    overflow: hidden;
+}
+
+
+.listComp--ul{
+    position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-top: 15px !important;
+    transition: all 0.2s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+    top: 0;
+}
+
+.listComp--ul li{
+    padding-left: 10%;
+    width: 100%; 
+    font-size: 0.9rem; 
+}
+
+

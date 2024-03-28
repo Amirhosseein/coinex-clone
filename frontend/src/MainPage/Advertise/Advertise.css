@@ -1,0 +1,108 @@
+.Advertise--container {
+  margin-left: 8%;
+  margin-top: 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Advertise--h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.Advertise--h3 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.Advertise--input {
+  border-style: solid;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  height: 35px;
+  width: 280px;
+  max-width: 280px;
+  margin-right: 5px;
+  border-color: #e0e3ed;
+  font-family: "Roboto", sans-serif;
+  padding-left: 10px;
+}
+
+.Advertise--input:hover {
+  border-color: #0ead98;
+  outline: none;
+}
+.Advertise--input:focus {
+  border-color: #0ead98 !important;
+  outline: none;
+}
+
+
+.decorImage {
+  width: 325px;
+  height: auto;
+  margin-right: 130px;
+  margin-top: 0px;
+}
+
+.color--pale {
+  color: #7d7f81;
+}
+
+
+
+
+@media screen and (max-width:1260px) {
+  .decorImage{
+    margin-right: 30px;
+  }
+}
+
+
+@media screen and (max-width:1255px) {
+  .decorImage{
+    margin-right: 0px;
+    width: 300px;
+  }
+}
+
+
+
+@media screen and (max-width:1134px) {
+  .decorImage{
+    width: 220px;
+    margin-top: 15px;
+    margin-right: 0px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .decor--image--container{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 520px) {
+  .Advertise--input{
+    width: 40%;
+  }
+}
+
+
+@media screen and (max-width: 330px) {
+  .Advertise--input{
+    margin-bottom: 20px;
+    width: 70%;
+    
+  }
+
+  .Advertise--btn{
+    margin-left: 0px;
+  }
+}
+

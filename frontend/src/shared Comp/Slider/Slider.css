@@ -1,0 +1,138 @@
+.display--none{
+    width: 0px !important;
+    height: 0px !important;
+    padding: 0px !important;
+}
+
+.slider--continer--space{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(126, 144, 142, 0.5) !important;
+    top: 60px;
+    position: absolute;
+    transition: width 0s ease-in-out 0s;
+    right: 0;
+    z-index: 1;
+}
+
+
+.space--close{
+    background-color: transparent !important;
+    width: 0;
+    transition: width 0.1s ease-in-out 0.4s;
+}
+
+.slider--continer{
+    width: 35%;
+    height: 100vh;
+    background-color: #fff !important;
+    float: right;
+    transition: width 0.18s ease-in-out 10ms , height 0.18s ease-in-out 20ms ;
+    padding-top: 30px;
+    padding-left: 10px ;
+    padding-right: 10px;
+}
+
+
+.slider--btns--container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.slider--btns--container button{
+    width: 160px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0ead98;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+.slider--btns--container--min button{
+    width: 42%;
+}
+
+.slider--btns--singUp{
+    background-color: #fff;
+    color: #0ead98;
+}
+
+.slider--btns--logIn{
+    background-color: #0ead98;
+    color: #fff;
+}
+
+
+.slider--btns--singUp:hover{
+    background-color: #0ead98;
+    color: #fff;
+}
+
+.slider--btns--logIn:hover{
+    background-color: rgb(59, 191, 173);
+}
+
+.slider--list--ul{
+    margin-top: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    font-size: 1.1rem;
+}
+
+.slider--list--ul li{
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+
+.slider--continer--min{
+    display: none;
+}
+
+
+.slider--continer--min--ul{
+    display: flex !important;
+    flex-direction:column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+   
+    
+}
+
+.slider--continer--min--ul li{
+    padding-left: 6% !important;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* @media only screen and (max-width: 940px) {
+    
+    .slider--continer{
+        width: 45%;
+    }
+
+} */
+
+
+@media only screen and (max-width: 940px) {
+    
+    .slider--continer{
+        width: 100%;
+    }
+
+    .slider--continer--middle{
+        display: none;
+    }
+
+    .slider--continer--min{
+        display: block;
+    }
+}

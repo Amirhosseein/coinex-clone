@@ -1,0 +1,57 @@
+.MS--container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: 0px auto 0px;
+  /* margin: 30px 60px; */
+  max-width: 85%;
+  height: 100%;
+  padding-left: 7%;
+  flex-wrap: nowrap;
+}
+.MS--div {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  width: 70%;
+  max-width: 70%;
+}
+
+.coines{
+ position: relative;
+ /* width: 300px;
+ height: 80px; */
+ 
+}
+
+.MS--container--space{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: 0px auto 0px;
+  /* margin: 30px 60px; */
+  max-width: 85%;
+  height: 100%;
+  /* padding-left: 7%; */
+  flex-wrap: nowrap;
+}
+.MS--container--space div{
+  width: 20%;
+  height: 50px;
+  background-color: #f5f9fa;
+}
+
+
+
+/* .MS--container--min{
+  position: relative;
+}
+
+.MS--div--min{
+  display: flex;
+  flex-direction: row;
+} */
