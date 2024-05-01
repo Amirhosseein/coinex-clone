@@ -134,16 +134,16 @@ const Banner = () => {
               style={{ marginTop: "0px" }}
             ></div>
 
-            <h3 style={firstTextStyle()}>
+            <h3 className="banner--content--h3" style={firstTextStyle()}>
               Versatile Asset Collection with Comprehensive Coin Information
             </h3>
 
-            <h3 style={secondTextStyle()}>
+            <h3 className="banner--content--h3" style={secondTextStyle()}>
               Self-Developed Proprietary Trade-Matching Engine Supporting Up to
               10,000 TPS
             </h3>
 
-            <h3 style={thirdTextStyle()}>
+            <h3 className="banner--content--h3" style={thirdTextStyle()}>
               PNL Analysis At a Glance, Deposit and Withdraw With Safety and
               Convenience
             </h3>
@@ -165,7 +165,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="banner--qr">
-            <img src="./websit.svg" style={{ width: "90px", height: "90px" }} />
+            <img src="./qrcode.png" style={{ width: "90px", height: "90px" }} />
             <p>
               {" "}
               Navigate to{" "}
@@ -195,7 +195,54 @@ const Banner = () => {
       {/* MOBILE VIWE */}
 
       <div className="banner--container--min">
-        
+        <div className="banner--header--min">
+          <span className={state.state === 0 ? "banner--header--min--span--active" :null}
+           onClick={changeState}
+           data-state={0}
+          > Market </span>
+          <span className={state.state === 1 ? "banner--header--min--span--active" :null}
+           onClick={changeState}
+           data-state={1}
+          > Transaction </span>
+          <span className={state.state === 2 ? "banner--header--min--span--active" :null}
+           onClick={changeState}
+           data-state={2}
+          > Asset </span>
+        </div>
+        <div className="banner--content--min">
+          <div>
+            <h3> Compatible With Multiple Devices </h3>
+            <p> Trade Cryptos, Anytime, Anywhere </p>
+          </div>
+
+          <p> {(state.state === 0 )? "Versatile Asset Collection with Comprehensive Coin Information":(state.state === 1)?
+           "Self-Developed Proprietary Trade-Matching Engine Supporting Up to 10,000 TPS":
+            "PNL Analysis At a Glance, Deposit and Withdraw With Safety and Convenience"} </p>
+        </div>
+        <div className="banner--content--footer">
+        <div className="banner--downloadApps">
+            <div className="banner--downloadApps--divs">
+              <AppleIcon />
+              <p>App Store</p>
+            </div>
+            <div className="banner--downloadApps--divs">
+              <GooglePlayIcon />
+              <p>Google Play</p>
+            </div>
+          </div>
+          <div className="banner--qr">
+            <img src="./qrcode.png" style={{ width: "90px", height: "90px" }} />
+            <p>
+              {" "}
+              Navigate to{" "}
+              <span style={{ fontWeight: "bold" }}>
+                {" "}
+                AmirHossein Khakshouri{" "}
+              </span>{" "}
+              website
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -5,6 +5,10 @@
     cursor: pointer;
 }
 
+.black--text--color{
+    color: black;
+}
+
 .blog--cards:hover{
     box-shadow: 0 12px 25px 0 rgba(193,196,211,.15);
     background-color: #fff;
@@ -27,7 +31,8 @@
 } 
 
 
-@media screen and (max-width:1285px) {
+
+@media screen and (max-width:1445px) {
     .blog--cards{
         width: 350px;
     }
@@ -39,7 +44,7 @@
 
 
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1270px) {
     .blog--cards{
         width: 305px;
     }

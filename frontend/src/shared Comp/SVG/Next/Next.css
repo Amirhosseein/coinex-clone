@@ -1,0 +1,14 @@
+.next--light{
+    fill: rgb(34, 34, 34);
+}
+
+.next--dark{
+    fill: #fff;
+}
+
+
+@media screen and (max-width:485px) {
+    .next--btn{
+        display: none;
+    }
+}

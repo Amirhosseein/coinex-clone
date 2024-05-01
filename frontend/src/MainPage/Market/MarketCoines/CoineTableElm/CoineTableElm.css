@@ -38,3 +38,30 @@
 
   text-decoration: none;
 }
+
+
+
+@media screen and (max-width:780px) {
+  .market--header--market{display: none;}
+ 
+}
+
+
+@media screen and (max-width:700px) {
+  .market--header--cap{display: none;}
+}
+
+
+@media screen and (max-width:485px) {
+  .table--image--text--des{
+      display: none;
+    }
+
+}
+
+
+@media screen and (max-width:400px) {
+  .table--tr td {
+    font-size: 0.9rem;
+  }
+}

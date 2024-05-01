@@ -1,0 +1,14 @@
+.pre--light{
+    fill: rgb(34, 34, 34);
+}
+
+.pre--dark{
+    fill: #fff;
+}
+
+
+@media screen and (max-width:485px) {
+    .pre--btn{
+        display: none;
+    }
+}

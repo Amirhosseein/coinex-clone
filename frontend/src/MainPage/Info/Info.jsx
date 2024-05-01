@@ -2,7 +2,7 @@ import "./Info.css";
 
 const Info = () => {
   return (
-    <div className="info--container">
+    <div className="info--container info--container--light">
       <div className="info--container--header">
         <h1> In CoinEx, Trade With Safety and Convenience </h1>
         <p>Delivering crypto trading services to 200+ countries and regions</p>
@@ -18,7 +18,7 @@ const Info = () => {
           </div>
           <img src="./trade_decor.png" alt="trade decor" />
         </div>
-        <div className="info--cards info--grid--team1 info--grid2">
+        <div className="info--cards info--grid--team1 info--grid2 info--gird--light">
           <div>
             <h2>Smooth crypto services based on user experience</h2>
             <p>
@@ -39,7 +39,7 @@ const Info = () => {
           </div>
           <img src="asset_decor.png" alt="Coins" />
         </div>
-        <div className="info--cards info--grid--team2 info--grid4">
+        <div className="info--cards info--grid--team2 info--grid4 info--gird--light">
           <div>
             <h2>One step ahead in financial options</h2>
             <p>

@@ -1,0 +1,14 @@
+.DownloadIcon{
+    width: 18px;
+    height: 18px;
+
+}
+
+
+.DownloadIcon--light{
+    fill: #000102;
+}
+
+.DownloadIcon--dark{
+    fill: #fff;
+}

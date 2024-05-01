@@ -3,20 +3,34 @@ import Button from "../shared Comp/Buttons/Button/Button";
 import WorldIconon from "../shared Comp/SVG/WorldIcon/WorldIcon";
 import WindowComp from "../shared Comp/WindowComp/WindowComp";
 import Vr from "../shared Comp/VerticalRule/Vr";
-import ContextApi from "../contextAPI/ContextApi";
+
 import "./Header.css";
 import MatrixDots from "../shared Comp/SVG/MatrixDots/MatrixDots";
 import Slider from "../shared Comp/Slider/Slider";
 import HeaderMenu from "../contextAPI/HeaderMenu";
+import useScroll from "../CustomHooks/Usescroll";
+import changeMode from "./functions/changeMode";
+import Moon from "../shared Comp/SVG/Moon/Moon";
+import DownloadIcon from "../shared Comp/SVG/DownlodIcon/DownloadIcon";
 
 const Header = () => {
-  const { scrollFromTop } = useContext(ContextApi);
+  const { header:scrollFromTop } = useScroll();
   const [menuState,setMenuState] = useState(false);
+  const [lightMood,setLightMood] = useState(true);
 
   const sliderHandeller = ()=>{
     setMenuState(pre => !pre);
   };
 
+
+  const changeMoodHandeler = ()=>{
+    console.log("dark");
+    setLightMood(!lightMood);
+    changeMode(!lightMood);
+    
+    
+    
+  };
 
   return (
     <HeaderMenu.Provider value={{open:menuState,setOpen:setMenuState}}>
@@ -24,7 +38,7 @@ const Header = () => {
         className="header"
         style={
           (scrollFromTop || menuState)
-            ? { backgroundColor: "#fff", boxShadow: "0 1px 5px #a6a8aa" }
+            ?  (lightMood) ? { backgroundColor: "#fff", boxShadow: "0 1px 5px #a6a8aa" } :{ backgroundColor: "#000", boxShadow: "0 1px 5px #a6a8aa" }
             : { backgroundColor: "transparent" }
         }
       >
@@ -34,7 +48,7 @@ const Header = () => {
           </li>
           <li>
             <WindowComp
-              windowTitle={<MatrixDots />}
+              windowTitle={<MatrixDots light={lightMood} />}
               windowStyle={{ left: "-20px", width: "320px" }}
               windowData={[
                 {
@@ -228,22 +242,14 @@ const Header = () => {
         <ul className="header--right">
           <div className="header--right--container--max">
             <li>
-              <WorldIconon />
+              <WorldIconon light={lightMood} />
             </li>
             <Vr />
-            <li>
-              <img
-                className="header--moon"
-                src="./moon.png"
-                alt="change theme"
-              />
+            <li onClick={changeMoodHandeler}>
+              <Moon light={lightMood} />
             </li>
             <li>
-              <img
-                className="header--download"
-                src="./download.png"
-                alt="get App"
-              />
+              <DownloadIcon light={lightMood} />
             </li>
             <Vr />
             <li>
@@ -265,7 +271,7 @@ const Header = () => {
 
               <img style={{width:"35px"}} src="./userIcon.png"  alt="User Icon" />
 
-              <Slider />
+              <Slider lightMood={lightMood} changeMoodHandeler={changeMoodHandeler} />
 
           </div>
         </ul>

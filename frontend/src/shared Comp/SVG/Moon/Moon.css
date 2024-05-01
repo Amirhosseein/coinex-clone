@@ -1,0 +1,13 @@
+.moonIcon{
+    width: 25px;
+    height: 25px;
+}
+
+.moonIcon--light{
+    fill: #000102;
+}
+
+
+.moonIcon--dark{
+    fill: #fff;
+}

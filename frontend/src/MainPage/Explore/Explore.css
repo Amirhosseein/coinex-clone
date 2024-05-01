@@ -1,6 +1,14 @@
 .Explore--container{
-    background-color: #fff;
+  
     text-align: center;
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+.Explore--container--light{
+    background-color: #fff;
+}
+
+.Explore--container--dark{
+    background-color: black;
 }

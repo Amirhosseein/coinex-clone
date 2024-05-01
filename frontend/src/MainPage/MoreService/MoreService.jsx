@@ -4,7 +4,7 @@ import Vr from "../../shared Comp/VerticalRule/Vr";
 
 const MoreService = () => {
   return (
-    <div className="moreService--container">
+    <div className="moreService--container moreService--container--light">
       <h1> More Services </h1>
       <div className="moreService--main--container">
         <div className="moreService--inner--container">

@@ -24,11 +24,23 @@
   border-radius: 20px;
   height: 35px;
   width: 280px;
+  
   max-width: 280px;
   margin-right: 5px;
-  border-color: #e0e3ed;
   font-family: "Roboto", sans-serif;
   padding-left: 10px;
+}
+
+.Advertise--input--light{
+  background-color: #ffffff !important;
+  border-color: #e0e3ed;
+  color: black;
+}
+
+.Advertise--input--dark{
+  background-color: #000 !important;
+  color: white;
+  background-color: #6f7175;
 }
 
 .Advertise--input:hover {

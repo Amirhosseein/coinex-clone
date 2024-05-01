@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./SlideImages.css";
+import Next from "../../shared Comp/SVG/Next/Next";
+import Pre from "../../shared Comp/SVG/Pre/Pre";
 
 const SlidImages = () => {
   const [set, setHandeler] = useState({ state: 0, increase: true });
@@ -11,9 +13,11 @@ const SlidImages = () => {
     if (data === "pre") {
       set.state > 0 &&
         setHandeler((pre) => ({ state: pre["state"] - 1, increase: false }));
-    } else {
+    } else if(data === "next") {
       set.state < tresh &&
         setHandeler((pre) => ({ state: pre["state"] + 1, increase: true }));
+    }else{
+      return;
     }
   };
 
@@ -32,23 +36,13 @@ const SlidImages = () => {
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#fff",
-        position: "relative",
-        zIndex: 1,
-      }}
-    >
-      <div className="slider--container">
+    <div className="sliderImage--parent--container  sliderImage--parent--container--light ">
+      <div className="sliderImage--container">
         <span style={{ margin: "auto" }}>
-          <img
-            style={{ width: "30px", height: "30px", cursor: "pointer" }}
-            src="./previous.png"
+          <Pre 
             data-btn="pre"
             onClick={clickHandeler}
-          />
+          /> 
         </span>
 
         <div
@@ -91,12 +85,10 @@ const SlidImages = () => {
         </div>
 
         <span style={{ margin: "auto" }}>
-          <img
-            style={{ width: "30px", height: "30px", cursor: "pointer" }}
-            src="./next.png"
-            data-btn="next"
-            onClick={clickHandeler}
-          />
+         <Next 
+          data-btn="next"
+          onClick={clickHandeler}
+         />
         </span>
       </div>
       <div

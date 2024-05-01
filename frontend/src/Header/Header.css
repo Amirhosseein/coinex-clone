@@ -50,6 +50,7 @@
     /* display: flex;
     flex-direction: row; */
     display: none;
+    color: black;
 }
 
 .lines--container{
@@ -92,6 +93,9 @@
     height: 17px;
 }
 
+/* .header--moon{
+    
+} */
 
 .sing-up{
     background: #0ead98;

@@ -31,6 +31,7 @@
     padding-top: 30px;
     padding-left: 10px ;
     padding-right: 10px;
+    color: black;
 }
 
 
@@ -94,6 +95,9 @@
 
 .slider--continer--min{
     display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 90%;
 }
 
 
@@ -104,13 +108,13 @@
     justify-content: center !important;
     margin-top: 20px !important;
    
-    
 }
 
 .slider--continer--min--ul li{
     padding-left: 6% !important;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%;
+    font-size: 1.2rem;
 }
 
 /* @media only screen and (max-width: 940px) {

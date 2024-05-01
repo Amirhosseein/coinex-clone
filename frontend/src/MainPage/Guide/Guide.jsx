@@ -19,7 +19,7 @@ const Guide = () => {
   };
 
   return (
-    <div className="guide--container">
+    <div className="guide--container  guide--container--light">
       <h1>Newbie Guide</h1>
       <p>Master the process of crypto exchange readily</p>
       <button

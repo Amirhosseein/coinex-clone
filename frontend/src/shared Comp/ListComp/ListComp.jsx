@@ -9,7 +9,7 @@ const ListCopm = (props) => {
   };
 
   return (
-    <li data-name="menu">
+    <li data-name="menu" className="listComp--top--li" >
       <p
         data-name="menu"
         style={{ marginTop: "0px",marginBottom: "0px", display:"flex", justifyContent:"space-between" }}
@@ -17,7 +17,7 @@ const ListCopm = (props) => {
       >
         {props.title} 
 
-        <span data-name="menu" style={{paddingRight:"10%"}}>{' ✔'}</span>
+        <span data-name="menu" style={{paddingRight:"10%"}}>{ open ? ' ⮟' : ' ⮞'}</span>
       </p>
       { <div className="listComp--container" data-name="menu" style={open ? null:{height:'0px'}} >
           <ul className="listComp--ul" style={open ? null : {top:'-200px'}}>

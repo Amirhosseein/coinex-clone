@@ -13,7 +13,7 @@ const Advertise = () => {
             Making Crypto Trading Easier
           </h4>
           <input
-            className="Advertise--input"
+            className="Advertise--input Advertise--input--light"
             type="email"
             placeholder="Email Account"
           />

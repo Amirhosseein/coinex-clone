@@ -8,36 +8,96 @@ import Info from "./Info/Info";
 import Guide from "./Guide/Guide";
 import Blog from "./Blog/Blog";
 import MoreService from "./MoreService/MoreService";
-import { socket } from "../socket/socket";
-
-import './MainPage.css';
 import Explore from "./Explore/Explore";
 import Footer from "../Footer/Footer";
-import { useEffect } from "react";
+import MarketCoines from "./Market/MarketCoines/MarketCoines";
+
+import './MainPage.css';
+
+import { useEffect, useState } from "react";
+import { socket } from "../socket/socket";
 
 
 const MainPage = () => { 
 
-  //test 
-    
+  const [coinData,setCoinData] = useState(null);
 
-  //test
+  //get coin data from back-end
+    
+  useEffect(() => {
+    fetch("http://localhost:3000/api/coin")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("fetch failed");
+        }
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.cause || data === "error") return;
+        setCoinData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log(coinData);
+    let timer;
+
+    timer = setInterval(() => {
+      socket.emit("checkData", coinData);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [coinData]);
+
+  useEffect(() => {
+    console.log("done!");
+    socket.on(
+      "changeData",
+      (data) => {
+        let changeData = [];
+        if (Array.isArray(coinData) && Array.isArray(data)) {
+          changeData = data.filter(
+            (elm, index) =>
+              elm.price.USD.price !== coinData[index].price.USD.price
+          );
+
+          console.log(changeData);
+        }
+
+        if (changeData.length > 0) {
+          setCoinData(data);
+         
+        }
+      },
+      []
+    );
+  });
+
+
+  //get coin data from back-end
 
 
 
   return (
     <>
-      <div className="white--green--color">
+      <div className="white--green--color colorful--section">
         <Header />
       
         <Advertise />
-        <MarketSummery />
+        <MarketSummery initCoinData={coinData} />
        
         
       </div>
 
       <SlidImages />
-      <Market />
+      <Market >
+          <MarketCoines coinData={coinData} />
+      </Market>
       <Banner />
       <Info />
       <Guide />
@@ -50,3 +110,34 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// this code create by AmirHossein Khakshouri Sani with 💙

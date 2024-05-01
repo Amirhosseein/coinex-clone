@@ -1,9 +1,18 @@
 .moreService--container{
-    background-color: #f5f9fa;
+    
     padding-left: 8%;
     padding-right: 8%;
     padding-top: 40px;
     padding-bottom: 80px;
+}
+
+ .moreService--container--light{
+    background-color: #f5f9fa;
+}
+
+
+.moreService--container--dark{
+    background-color: #31363F;
 }
 
 .moreService--container h1{
@@ -57,7 +66,7 @@
 }
 
 
-@media screen and (max-width:1250px) {
+@media screen and (max-width:1257px) {
     .moreService--inner--container a{
         width: 400px;
     }

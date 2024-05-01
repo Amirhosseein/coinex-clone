@@ -2,12 +2,22 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-  color: #161719;
+  
   font-family: "Roboto", sans-serif ;
   padding: 0px;
   margin: 0px;
-  background-color: #fff;
  
+ 
+}
+
+.body--light--mood{
+  color: #161719;
+  background-color: #ffffff;
+}
+
+.body--dark--mood{
+  color: #ffffff;
+  background-color: #222831;
 }
 
 button{

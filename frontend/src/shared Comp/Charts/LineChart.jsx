@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Chart as ChartJS,
   LinearScale,
@@ -12,12 +12,11 @@ import { Scatter, Line } from "react-chartjs-2";
 import "./LineChart.css";
 
 const ScatterChart = (props) => {
-  const [data, setData] = useState(null);
-  console.log(props);
-  useEffect(() => {
+ 
+
     ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
     const labels = props.labels ? props.labels : null;
-    console.log(labels);
+    
     const detectColor = () => {
       try {
         if (
@@ -36,7 +35,7 @@ const ScatterChart = (props) => {
         return "#B4B4B8";
       }
     };
-    setData({
+    const data = {
       labels: labels,
       datasets: [
         {
@@ -46,8 +45,8 @@ const ScatterChart = (props) => {
           borderColor: detectColor,
         },
       ],
-    });
-  }, []);
+    };
+  
 
   return (
     <div className={props.className}>

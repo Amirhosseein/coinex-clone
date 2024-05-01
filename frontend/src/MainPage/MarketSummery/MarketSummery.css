@@ -14,19 +14,18 @@
 .MS--div {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 70%;
   max-width: 70%;
 }
 
-.coines{
- position: relative;
- /* width: 300px;
+.coines {
+  position: relative;
+  /* width: 300px;
  height: 80px; */
- 
 }
 
-.MS--container--space{
+.MS--container--space {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -39,19 +38,115 @@
   /* padding-left: 7%; */
   flex-wrap: nowrap;
 }
-.MS--container--space div{
+.MS--container--space div {
   width: 20%;
   height: 50px;
+  
+}
+
+.MS--container--space--light div{
   background-color: #f5f9fa;
 }
 
+.MS--container--space--dark div{
+  background-color: #7d7f81;
+} 
 
-
-/* .MS--container--min{
-  position: relative;
+.MS--container--min {
+  display: none;
 }
 
-.MS--div--min{
-  display: flex;
-  flex-direction: row;
-} */
+.MS--container--min span{
+  color: #7d7f81 ;
+}
+
+.MS--container--min p{
+  color: #7d7f81 !important;
+}
+
+.MS--container--min a{
+  text-decoration: none;
+}
+
+.MS--container--space--min {
+  display: none;
+}
+
+.MS--Vr--min {
+  height: 60px;
+  border-color: #7d7f81;
+}
+
+
+.coin--min--hide{
+  /* display: none; */
+  overflow: hidden;
+}
+
+.coin--min--animation{
+  position: relative;
+  animation-name: moveUp;
+  animation-duration: 3.85s;
+ 
+}
+
+
+
+@media screen and (max-width: 890px) {
+  .MS--container--min {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .MS--container {
+    display: none;
+  }
+
+  .MS--container--space {
+    display: none;
+  }
+
+  .MS--container--space--min {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin: 0px auto 0px;
+    /* margin: 30px 60px; */
+    max-width: 85%;
+    height: 100%;
+    /* padding-left: 7%; */
+    flex-wrap: nowrap;
+  }
+  .MS--container--space--min div {
+    width: 20%;
+    height: 50px;
+    background-color: #f5f9fa;
+  }
+}
+
+
+
+@keyframes moveUp {
+
+  0% {
+    transform: translate(0px,100px);
+  }
+
+  20%{
+    transform: translate(0px,0px);
+  }
+
+  70%{
+    transform: translate(0px,0px);
+  }
+
+  100% {
+    transform: translate(0px,-100px);
+  }
+}

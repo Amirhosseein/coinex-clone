@@ -1,28 +1,38 @@
 import { useContext, useEffect } from "react";
 import HeaderMenu from "../../contextAPI/HeaderMenu";
-import ContextApi from "../../contextAPI/ContextApi";
+
 import "./Slider.css";
 import ListCopm from "../ListComp/ListComp";
+import useScreenSize from "../../CustomHooks/useScreenSize";
 
-const Slider = () => {
+const Slider = ({changeMoodHandeler,lightMood}) => {
   const { open, setOpen } = useContext(HeaderMenu);
-  const { width } = useContext(ContextApi);
+  const { desktop } = useScreenSize();
+
+
+  
 
   const spaceClickHandler = (e) => {
     const point = e.target.getAttribute("data-name") ?? "other";
     if (point === "other") {
-      console.log("click");
       setOpen(false);
     }
   };
 
-  useEffect(() => {
-    console.log("🚙🚓");
 
-    if (width > 1200) {
-      setOpen(false);
+
+
+  useEffect(() => {
+    if (desktop) {
+      setOpen((pre)=>{
+        if(!pre) return pre;
+        return false;
+      });
     }
-  }, [width, setOpen]);
+  }, [desktop,setOpen]);
+
+
+
 
   return (
     <div
@@ -30,10 +40,14 @@ const Slider = () => {
       onClick={spaceClickHandler}
     >
       <div
-        className={`slider--continer  ${open ?  null :'display--none'}`}
+        className={`slider--continer  ${open ? null : "display--none"}`}
         data-name="menu"
       >
-        <div className={`slider--continer--middle  ${open ? null : 'display--none'}`}>
+        <div
+          className={`slider--continer--middle  ${
+            open ? null : "display--none"
+          }`}
+        >
           {open && (
             <div className="slider--btns--container">
               <button className="slider--btns--singUp">Sing Up</button>
@@ -44,13 +58,15 @@ const Slider = () => {
             <ul className="slider--list--ul">
               <li>English</li>
               <li>Currency</li>
-              <li>Dark Mode</li>
+              <li onClick={changeMoodHandeler}> {lightMood ? "Dark Mode" : "Light Mode" } </li>
               <li>Download App</li>
             </ul>
           )}
         </div>
 
-        <div className={`slider--continer--min  ${open ? null : 'display--none'}`}>
+        <div
+          className={`slider--continer--min  ${open ? null : "display--none"}`}
+        >
           {open && (
             <div className="slider--btns--container  slider--btns--container--min">
               <button className="slider--btns--singUp">Sing Up</button>
@@ -100,10 +116,10 @@ const Slider = () => {
                 ]}
               />
 
-               <li>English</li>
-               <li>Currency</li>
-               <li>Download App</li>
-              
+              <li>English</li>
+              <li>Currency</li>
+              <li onClick={changeMoodHandeler}>  {lightMood ? "Dark Mode" : "Light Mode" } </li>
+              <li>Download App</li>
             </ul>
           )}
         </div>

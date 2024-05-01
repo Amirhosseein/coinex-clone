@@ -22,7 +22,32 @@
     line-height: 0.5;
 }
 
+.coin--price--light{
+    color: black;
+}
+
+.coin--price--dark{
+    color: white;
+}
+
+
 .coin--price--under{
     font-size: 0.8rem;
     color: #7d7f81;
 }
+
+.fix--width{
+    width: 125px;
+}
+
+.coin--price--positive{
+    color: rgb(14, 173, 152) !important ;
+    margin-top: 1.5%;
+}
+
+
+.coin--price--negative{
+    color:rgb(219, 85, 65) !important;
+    margin-top: 1.5%;;
+}
+

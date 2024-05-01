@@ -135,6 +135,27 @@
   margin-left: 20px;
 }
 
+
+
+.banner--header--min--span--active{
+  font-weight: bold;
+
+  border-bottom: 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px ;
+  border-color: #fff ;
+  border-style: solid ;
+}
+
+.banner--content--min{
+  padding-left: 25px;
+}
+
+.banner--content--min div{
+margin-bottom: 45px;
+}
+
 @media screen and (max-width: 940px) {
   .banner--3rd--container {
     display: none;
@@ -162,12 +183,27 @@
 
 
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 665px) {
   /* this is for mobile phone */
   .banner--container{
     display: none;
   }
   .banner--container--min{
     display: block;
+    background-color: #0ead98;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    background-image: url("./coinex.png");
+    padding-top: 20px;
+  }
+
+  .banner--header--min span{
+    margin:0px 17px ;
+    cursor: pointer;
+  }
+
+  .banner--header--min{
+    margin: 15px ;
   }
 }

@@ -1,15 +1,24 @@
 import MarketCoines from "./MarketCoines/MarketCoines";
 import "./Market.css";
+import SerchInput from "../../shared Comp/SerchInput/SerchInput";
+import { memo, useState } from "react";
 
-const Market = () => {
+const Market = ({children}) => {
+
+  const submitHandeler = (value)=>{
+    console.log(value);
+  };
+
   return (
-    <div className="market--container">
+    <div className="market--container market--container--light">
       <div className="market--header--container">
         <h3 className="market--header"> MARKET TRENDS </h3>
-        <input className="market--serch" placeholder=" Serch" />
+        <SerchInput clssAdded="market--search--light" onSubmit={submitHandeler} />
       </div>
-      <p style={{lineHeight:0,paddingBottom:"30px"}}>Crypto market leaderboard express</p>
-      <MarketCoines />
+      <p style={{lineHeight:0,paddingBottom:"30px"}}> Crypto market leaderboard express </p>
+
+      {/* <MarketCoines /> */}
+      {children}
       <br />
 
       <div className="table--bottom">
@@ -22,4 +31,4 @@ const Market = () => {
   );
 };
 
-export default Market;
+export default (Market);

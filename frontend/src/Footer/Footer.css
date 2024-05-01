@@ -3,7 +3,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+}
+
+.footer--main--container--light{
     background-color: #f5f9fa;
+}
+
+
+
+.footer--main--container--dark{
+    background-color: #31363F;
 }
 
 .footer--divs{
@@ -47,20 +57,74 @@
 
 .footer--socalMedia--container a{
     margin-right: 5px;
+    text-decoration: none;
 }
 
 
+.footer--main--container--min{
+    display: none;
+}
+
+.footer--hr--min{
+    background-color: #7d7f81;
+    color: #7d7f81;
+    width: 99%;
+}
+
+.footer--header--min{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.footer--main--container--min ul{
+    list-style-type: none ;
+}
+
+
+.footer--main--container--min li{
+    margin: 10px auto;
+}
+
+.footer--main--container--min a{
+    text-decoration: none;
+    
+}
+
+.footer--main--container--min--light{
+    background-color: #f5f9fa;
+}
+
+
+.footer--main--container--min--light a{
+    color: #000;
+}
+
+.footer--main--container--min--dark{
+    background-color: #31363F;
+}
+
+.footer--main--container--min--dark a{
+    color: #fff;
+}
+
+
+.footer--slider--min{
+    height: 200px;
+    overflow-y: scroll;
+}
 
 @media screen and (max-width:1220px) {
     
-    /* temporary rule */
-
-
-    .footer--support{
+    .footer--main--container{
         display: none;
     }
 
-    .footer--services{
-        display: none;
+    .footer--main--container--min{
+        padding-left: 30px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+   
     }
 }
