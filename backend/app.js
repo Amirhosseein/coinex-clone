@@ -9,45 +9,42 @@ import getData from "./functions/getLastcoinsData.js";
 
 const app = express();
 const port = process.env.PORT || 3000 ;
+const serverOrigin = process.env.SERVER_ORIGIN || "http://localhost:5173" 
 const httpServer = http.createServer(app);
 const io = new Server(httpServer,{ cors: {
-  origin: "http://localhost:5173"
+  origin: serverOrigin
 }});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-io.on('connection', (socket) => {
+io.on('connection', async(socket) => {
   console.log('user connected with ID: '+socket.id);
 
-  socket.on("checkData", async(lastData)=>{
+    let data = await getData();
+    console.log(data);
+    if(!data || !Array.isArray(data)) return;
 
-   
-     
-      const newData = await getData();
-      console.log("done!");
-      if(! Array.isArray(newData)) return;
-      
-      if(newData.length > 5 && Array.isArray(lastData)){
-        const changeData = newData.filter((elm,index)=> elm.price.USD.price !== lastData[index].price.USD.price);
-
-         console.log(changeData.length);
-       
-        if(changeData.length > 0){
-          console.log(socket.id);
-          io.to(socket.id).emit("changeData",newData);
+    setInterval(()=>{
+      const checkData = async()=>{
+        const newData = await getData();
+        if(!newData || !Array.isArray(newData)) return;
+        if(JSON.stringify(newData).split("").sort().join("") !== JSON.stringify(data).split("").sort().join("")){
+          data = newData;
+          console.log("👍data changed👍");
+          io.emit("changeData",newData);
+          
         }else{
-          console.log("no new answer");
-          return;
+          console.log("*** no change ***");
         }
-      }else{
-        console.log("rest");
-        const tryagin = (newData.length > 5 ) ? newData : await getData();
-        io.to(socket.id).emit("changeData",tryagin);
+    
       }
- 
-  });
+
+      checkData();
+    },10000)
+
+  
   
 
   socket.on('disconnect', function () {
@@ -87,3 +84,37 @@ httpServer.listen(port,()=>{
 
 
 // AmirHossein Khakshouri Sani
+
+
+
+
+
+
+
+  // socket.on("checkData", async(lastData)=>{
+
+   
+     
+  //     const newData = await getData();
+  //     console.log("done!");
+  //     if(! Array.isArray(newData)) return;
+      
+  //     if(newData.length > 5 && Array.isArray(lastData)){
+  //       const changeData = newData.filter((elm,index)=> elm.price.USD.price !== lastData[index].price.USD.price);
+
+  //        console.log(changeData.length);
+       
+  //       if(changeData.length > 0){
+  //         console.log(socket.id);
+  //         io.to(socket.id).emit("changeData",newData);
+  //       }else{
+  //         console.log("no new answer");
+  //         return;
+  //       }
+  //     }else{
+  //       console.log("rest");
+  //       const tryagin = (newData.length > 5 ) ? newData : await getData();
+  //       io.to(socket.id).emit("changeData",tryagin);
+  //     }
+ 
+  // });
