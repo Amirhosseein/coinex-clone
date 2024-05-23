@@ -44,17 +44,6 @@ const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log(coinData);
-    let timer;
-
-    timer = setInterval(() => {
-      socket.emit("checkData", coinData);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [coinData]);
-
-  useEffect(() => {
     console.log("done!");
     socket.on(
       "changeData",

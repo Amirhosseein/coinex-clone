@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import SocalMediaIcon from "../shared Comp/SVG/SocalMediaIcon/SocalMediaIcon";
 import {Link} from "react-router-dom";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = memo(function Footer(){
 
   const date = new Date();
 
@@ -209,6 +209,6 @@ const Footer = () => {
       </div>
     </>
   );
-};
+});
 
 export default Footer;

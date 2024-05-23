@@ -1,8 +1,8 @@
-import MarketCoines from "./MarketCoines/MarketCoines";
 import "./Market.css";
 import SerchInput from "../../shared Comp/SerchInput/SerchInput";
-import { memo, useState } from "react";
 
+
+// eslint-disable-next-line react/prop-types
 const Market = ({children}) => {
 
   const submitHandeler = (value)=>{

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import "./SlideImages.css";
 import Next from "../../shared Comp/SVG/Next/Next";
 import Pre from "../../shared Comp/SVG/Pre/Pre";
 
-const SlidImages = () => {
+const SlidImages = memo (function SlideImages(){
   const [set, setHandeler] = useState({ state: 0, increase: true });
 
   const tresh = 2;
@@ -118,6 +118,6 @@ const SlidImages = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SlidImages;

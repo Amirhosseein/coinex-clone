@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import Vr from "../../shared Comp/VerticalRule/Vr";
 import AppleIcon from "../../shared Comp/SVG/AppleIcon/AppleIcon";
 
@@ -8,21 +8,20 @@ import GooglePlayIcon from "../../shared Comp/SVG/GooglePlayIcon/GooglePlayIcon"
 
 let timer;
 
-const Banner = () => {
+const Banner = memo(function Banner(){
   const [state, setState] = useState({
     state: 0,
     restTimer: false,
   });
   const tresh = 2;
 
-  const timerFn = () => {
-    console.log("timer");
+  const timerFn = useCallback(() => {
 
     setState((pre) => {
       if (pre.state === tresh) return { ...pre, state: 0 };
       return { ...pre, state: pre.state + 1 };
     });
-  };
+  },[]);
 
   const changeState = (e) => {
     const newState = Number(e.target.getAttribute("data-state"));
@@ -67,7 +66,7 @@ const Banner = () => {
   };
 
   useEffect(() => {
-    console.log(timer + " useEffect");
+   
 
     if (state.restTimer) {
       timer && clearInterval(timer);
@@ -78,7 +77,7 @@ const Banner = () => {
     }
 
     return () => clearInterval(timer);
-  }, [state.restTimer]);
+  }, [state.restTimer,timerFn]);
 
   return (
     <>
@@ -246,6 +245,6 @@ const Banner = () => {
       </div>
     </>
   );
-};
+});
 
 export default Banner;

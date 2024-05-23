@@ -3,8 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { data } from "./Blog.json";
 import BlogCard from "./BlogCard/BlogCard";
+import { memo } from "react";
 
-const Blog = () => {
+const Blog = memo(function Blog(){
   return (
     <div className="blog--container">
       <h1>Blog</h1>
@@ -18,6 +19,6 @@ const Blog = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Blog;

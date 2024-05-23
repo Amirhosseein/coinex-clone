@@ -1,10 +1,10 @@
 import Coine from "./Coine/Coine";
-import { memo, useContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import Vr from "../../shared Comp/VerticalRule/Vr";
 
 import { dataIndex } from "./dataSet.json";
 import { Link } from "react-router-dom";
-import useScroll from "../../CustomHooks/Usescroll";
+import useScroll from "../../CustomHooks/useScroll.js";
 
 import "./MarketSummery.css";
 
@@ -31,23 +31,28 @@ const cleanUpfun = (data) => {
   }
 };
 
+// eslint-disable-next-line react/prop-types
 const MarketSummery = ({ initCoinData }) => {
   const [set, SetHandeler] = useState({ allow: true, group: 1 });
-  const { anime: coinAnimation } = useScroll();
+  const { anime: coinAnimation } =  useScroll();
+  
   // const [coinData, setCoinData] = useState(null);
 
   useEffect(() => {
+    
     const timer = setInterval(() => {
       if (set.allow && coinAnimation) {
-        console.log("chnage");
+        
         SetHandeler((pre) => {
           if (pre.group === 5) return { ...pre, group: 1 };
           return { ...pre, group: pre.group + 1 };
         });
       }
     }, 3000);
+
     return () => clearInterval(timer);
-  });
+
+  },[set.allow,coinAnimation]);
 
   const enterMouseHandeler = () => {
     SetHandeler((pre) => ({ ...pre, allow: false }));

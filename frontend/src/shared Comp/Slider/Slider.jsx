@@ -1,16 +1,16 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect,memo } from "react";
 import HeaderMenu from "../../contextAPI/HeaderMenu";
 
 import "./Slider.css";
 import ListCopm from "../ListComp/ListComp";
-import useScreenSize from "../../CustomHooks/useScreenSize";
+import useScreenSize from "../../CustomHooks/useScreenSize.js";
 
-const Slider = ({changeMoodHandeler,lightMood}) => {
+// eslint-disable-next-line react/prop-types
+const Slider = memo(function Slider({changeMoodHandeler,lightMood}){
   const { open, setOpen } = useContext(HeaderMenu);
-  const { desktop } = useScreenSize();
+  const size = useScreenSize();
 
 
-  
 
   const spaceClickHandler = (e) => {
     const point = e.target.getAttribute("data-name") ?? "other";
@@ -23,13 +23,13 @@ const Slider = ({changeMoodHandeler,lightMood}) => {
 
 
   useEffect(() => {
-    if (desktop) {
+    if (size === "desktop") {
       setOpen((pre)=>{
         if(!pre) return pre;
         return false;
       });
     }
-  }, [desktop,setOpen]);
+  }, [size,setOpen]);
 
 
 
@@ -126,6 +126,6 @@ const Slider = ({changeMoodHandeler,lightMood}) => {
       </div>
     </div>
   );
-};
+});
 
 export default Slider;

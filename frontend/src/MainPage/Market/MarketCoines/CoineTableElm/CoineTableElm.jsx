@@ -1,22 +1,22 @@
 import LineChart from "../../../../shared Comp/Charts/LineChart";
-import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import "./CoineTableElm.css";
-import { memo, useMemo } from "react";
+import { memo} from "react";
 
 
 
 
-const CoineTableElm = (props) => {
+// eslint-disable-next-line react/prop-types
+const CoineTableElm = memo(function CoineTableElm ({coine,change,coineLogo,coineName,price,cap,noChartData,labels,data}){
 
-  console.log(props);
+  
 
   const navigateTo = useNavigate();
   const rowHandelClick = ()=>{
-    navigateTo(`/coin/${props.coine}`)
+    navigateTo(`/coin/${coine}`)
   }
   
-  if(!props.change){
+  if(!change){
     return null;
   }
 
@@ -33,45 +33,46 @@ const CoineTableElm = (props) => {
       >
         <img
           className="table--image"
-          src={props.coineLogo}
-          alt={`${props.coine} Logo`}
+          src={coineLogo}
+          alt={`${coine} Logo`}
         />
         <span
           className="table--image--text"
           style={{ marginLeft: "10px", fontWeight: "bold" }}
         >
           
-          {props.coine}
+          {coine}
         </span>
         <span
           className="table--image--text table--image--text--des"
           style={{ marginLeft: "6px", color: "GrayText", fontWeight: "normal" }}
         >
-          {props.coineName}
+          {coineName}
         </span>
       </td>
-      <td className="rightEnd">{props.price}</td>
+      <td className="rightEnd">{price}</td>
       <td
         className="rightEnd"
         style={
-          props.change?.charAt(0) === "-"
+         
+          change.toString()?.charAt(0) === "-"
             ? { color: "#db5541" }
             : { color: "#0ead98" }
         }
       >
-        {Number(props.change).toFixed(2)}%
+        {Number(change).toFixed(2)}%
       </td>
-      <td className="rightEnd market--data--cap">{props.cap}</td>
-      <td style={{ textAlign: "center", paddingInlineStart: "25px" }}>
+      <td className="rightEnd market--data--cap">{cap}</td>
+      <td className="market--charts--table" style={{ textAlign: "center", paddingInlineStart: "25px" }}>
         
-        {props.noChartData ? "no data" :<LineChart
+        {noChartData ? <span> no data </span> :<LineChart
           className="table--chart"
-          labels={props.labels}
-          data={props.data}
+          labels={labels}
+          data={data}
         />}
       </td>
     </tr>
   );
-};
+});
 
 export default (CoineTableElm);

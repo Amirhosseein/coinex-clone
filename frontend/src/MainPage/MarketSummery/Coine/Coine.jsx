@@ -1,7 +1,9 @@
 
 
+import { memo } from "react";
 import "./Coine.css";
-const Coine = ({className='hide--Anime',style,show=true,ImgAlt,ImgSrc,name,change,value,valueUsd}) => {
+// eslint-disable-next-line react/prop-types
+const Coine = memo (function Coine ({className='hide--Anime',style,show=true,ImgAlt,ImgSrc,name,change,value,valueUsd}){
   return (
     <>
     <div className={`${className} fix--width`} style={show ? null : {opacity:0,top:"50%", zIndex:"-1" }}>
@@ -21,7 +23,7 @@ const Coine = ({className='hide--Anime',style,show=true,ImgAlt,ImgSrc,name,chang
     
     </>
   );
-};
+});
 
 export default  Coine;
 

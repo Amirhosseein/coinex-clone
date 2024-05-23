@@ -1,8 +1,9 @@
 import "./MoreService.css";
 import { Link } from "react-router-dom";
 import Vr from "../../shared Comp/VerticalRule/Vr";
+import { memo } from "react";
 
-const MoreService = () => {
+const MoreService = memo(function moreService(){
   return (
     <div className="moreService--container moreService--container--light">
       <h1> More Services </h1>
@@ -31,6 +32,6 @@ const MoreService = () => {
       </div>
     </div>
   );
-};
+});
 
 export default MoreService;

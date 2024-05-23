@@ -6,7 +6,7 @@ import "./MarketCoines.css"
 
 
 const filterData = (data)=>{
-  console.log("Amin");
+ 
   let newData = []
   data.forEach(elem => {
     if (elem.symbol === "BTC"){
@@ -43,6 +43,7 @@ const filterData = (data)=>{
 };
 
 
+// eslint-disable-next-line react/prop-types
 const MarketCoiines = ({coinData}) => {
   console.log(coinData);
   

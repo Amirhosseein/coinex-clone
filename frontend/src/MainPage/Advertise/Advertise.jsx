@@ -1,7 +1,8 @@
+import { memo } from "react";
 import RegisterBtn from "../../shared Comp/Buttons/RegisterBtn/RegisterBtn";
 import "./Advertise.css";
 
-const Advertise = () => {
+const Advertise = memo(function Advertise(){
   return (
     <>
       <div className="Advertise--container">
@@ -25,6 +26,6 @@ const Advertise = () => {
       </div>
     </>
   );
-};
+});
 
 export default Advertise;

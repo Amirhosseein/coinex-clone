@@ -43,7 +43,7 @@
 
 @media screen and (max-width:780px) {
   .market--header--market{display: none;}
- 
+  .market--charts--table{display: none;}
 }
 
 

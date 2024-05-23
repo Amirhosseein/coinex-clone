@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import "./Guide.css";
 
 import {data} from "./GuideData.json";
 
-const Guide = () => {
+const Guide = memo (function Guide(){
   const [state, setState] = useState(0);
 
   // img src set
@@ -48,6 +48,6 @@ const Guide = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Guide;

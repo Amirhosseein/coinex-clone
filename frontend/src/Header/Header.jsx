@@ -1,19 +1,18 @@
-import { useContext, useState } from "react";
+import {memo, useCallback, useState } from "react";
 import Button from "../shared Comp/Buttons/Button/Button";
 import WorldIconon from "../shared Comp/SVG/WorldIcon/WorldIcon";
 import WindowComp from "../shared Comp/WindowComp/WindowComp";
 import Vr from "../shared Comp/VerticalRule/Vr";
-
 import "./Header.css";
 import MatrixDots from "../shared Comp/SVG/MatrixDots/MatrixDots";
 import Slider from "../shared Comp/Slider/Slider";
 import HeaderMenu from "../contextAPI/HeaderMenu";
-import useScroll from "../CustomHooks/Usescroll";
+import useScroll from "../CustomHooks/useScroll.js";
 import changeMode from "./functions/changeMode";
 import Moon from "../shared Comp/SVG/Moon/Moon";
 import DownloadIcon from "../shared Comp/SVG/DownlodIcon/DownloadIcon";
 
-const Header = () => {
+const Header = memo(function Header(){
   const { header:scrollFromTop } = useScroll();
   const [menuState,setMenuState] = useState(false);
   const [lightMood,setLightMood] = useState(true);
@@ -23,14 +22,13 @@ const Header = () => {
   };
 
 
-  const changeMoodHandeler = ()=>{
-    console.log("dark");
-    setLightMood(!lightMood);
-    changeMode(!lightMood);
+  const changeMoodHandeler = useCallback(()=>{
+    setLightMood((preMode)=>{
+      changeMode(!preMode);
+      return !preMode;
+    });
     
-    
-    
-  };
+  },[]);
 
   return (
     <HeaderMenu.Provider value={{open:menuState,setOpen:setMenuState}}>
@@ -278,7 +276,7 @@ const Header = () => {
       </nav>
     </HeaderMenu.Provider>
   );
-};
+});
 
 export default Header;
 

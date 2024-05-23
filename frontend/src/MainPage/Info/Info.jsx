@@ -1,6 +1,7 @@
+import { memo } from "react";
 import "./Info.css";
 
-const Info = () => {
+const Info = memo(function Info(){
   return (
     <div className="info--container info--container--light">
       <div className="info--container--header">
@@ -52,6 +53,6 @@ const Info = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Info;
