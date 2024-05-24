@@ -3,9 +3,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import http from "http";
 import {Server} from "socket.io";
-
 import coin from "./routes/coin.js";
-import getData from "./functions/getLastcoinsData.js";
+import { brodCast } from "./functions/brodCastLastinfo.js";
 
 const app = express();
 const port = process.env.PORT || 3000 ;
@@ -21,30 +20,6 @@ app.use(cors());
 
 io.on('connection', async(socket) => {
   console.log('user connected with ID: '+socket.id);
-
-    let data = await getData();
-    console.log(data);
-    if(!data || !Array.isArray(data)) return;
-
-    setInterval(()=>{
-      const checkData = async()=>{
-        const newData = await getData();
-        if(!newData || !Array.isArray(newData)) return;
-        if(JSON.stringify(newData).split("").sort().join("") !== JSON.stringify(data).split("").sort().join("")){
-          data = newData;
-          console.log("👍data changed👍");
-          io.emit("changeData",newData);
-          
-        }else{
-          console.log("*** no change ***");
-        }
-    
-      }
-
-      checkData();
-    },10000)
-
-  
   
 
   socket.on('disconnect', function () {
@@ -52,9 +27,13 @@ io.on('connection', async(socket) => {
   });
 
 
-  
-
 });
+
+
+brodCast(io);
+
+
+
 app.set("socket", io);
 
 app.get("/", (req, res) => {
@@ -95,26 +74,4 @@ httpServer.listen(port,()=>{
 
    
      
-  //     const newData = await getData();
-  //     console.log("done!");
-  //     if(! Array.isArray(newData)) return;
-      
-  //     if(newData.length > 5 && Array.isArray(lastData)){
-  //       const changeData = newData.filter((elm,index)=> elm.price.USD.price !== lastData[index].price.USD.price);
-
-  //        console.log(changeData.length);
-       
-  //       if(changeData.length > 0){
-  //         console.log(socket.id);
-  //         io.to(socket.id).emit("changeData",newData);
-  //       }else{
-  //         console.log("no new answer");
-  //         return;
-  //       }
-  //     }else{
-  //       console.log("rest");
-  //       const tryagin = (newData.length > 5 ) ? newData : await getData();
-  //       io.to(socket.id).emit("changeData",tryagin);
-  //     }
  
-  // });
